@@ -5,7 +5,7 @@ const { startDraw } = require('../ucl-draw-simulator.js');
 test('UEFA Champions League Draw Simulation Tests', async (t) => {
     
     await t.test('Draw should generate exactly 8 groups with 4 teams each', () => {
-        const groups = startDraw(); // startDraw fonksiyonunun groups dizisini return ettiğinden emin olun
+        const groups = startDraw();
         
         assert.strictEqual(groups.length, 8, '8 grup oluşturulmalı');
         
@@ -28,7 +28,6 @@ test('UEFA Champions League Draw Simulation Tests', async (t) => {
         const groups = startDraw();
         
         groups.forEach(group => {
-            // Her gruptaki takımların puan aralıklarına göre farklı potlardan geldiğini doğrula
             const teamPoints = group.teams.map(t => t.points);
             
             assert.ok(teamPoints.some(p => p >= 25 && p <= 32), `${group.name} grubunda Pot 1 takımı yok`);
