@@ -92,6 +92,7 @@ function startDraw() {
             }
             if (!success) break;
         }
+        return groups;
     }
 
     // Display Results
