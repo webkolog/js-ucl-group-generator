@@ -69,7 +69,7 @@ function startDraw() {
         // Draw for each pot
         for (let p = 0; p < 4; p++) {
             let currentPot = [...pots[p]];
-            // Shuffle current pot (Fisher-Yates style shuffle)
+            // Shuffle current pot
             currentPot.sort(() => Math.random() - 0.5);
 
             for (let t = 0; t < currentPot.length; t++) {
@@ -81,7 +81,7 @@ function startDraw() {
                 );
 
                 if (eligibleGroups.length === 0) {
-                    // Deadlock occurred: invalid group configuration. Reset and restart draw.
+                    // Deadlock occurred: reset and restart whole draw.
                     success = false;
                     break;
                 }
@@ -92,23 +92,27 @@ function startDraw() {
             }
             if (!success) break;
         }
-        return groups;
     }
 
-    // Display Results
-    console.log("%c UEFA CHAMPIONS LEAGUE GROUP DRAW ", "background: #003366; color: #fff; font-size: 20px; padding: 5px;");
-    console.table(groups.map(g => ({
-        Group: g.name,
-        "Pot 1": `${g.teams[0].name} (${g.teams[0].country})`,
-        "Pot 2": `${g.teams[1].name} (${g.teams[1].country})`,
-        "Pot 3": `${g.teams[2].name} (${g.teams[2].country})`,
-        "Pot 4": `${g.teams[3].name} (${g.teams[3].country})`
-    })));
+    // Display Results in Console if console.table exists
+    if (typeof console !== 'undefined' && console.table) {
+        console.log("%c UEFA CHAMPIONS LEAGUE GROUP DRAW ", "background: #003366; color: #fff; font-size: 20px; padding: 5px;");
+        console.table(groups.map(g => ({
+            Group: g.name,
+            "Pot 1": `${g.teams[0].name} (${g.teams[0].country})`,
+            "Pot 2": `${g.teams[1].name} (${g.teams[1].country})`,
+            "Pot 3": `${g.teams[2].name} (${g.teams[2].country})`,
+            "Pot 4": `${g.teams[3].name} (${g.teams[3].country})`
+        })));
+    }
+
+    // Return completed groups array for test validation
+    return groups;
 }
 
-startDraw();
-
-// Node.js/Export for test environment
+// Node.js test environment export
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { startDraw, teams, pots };
+} else {
+    startDraw();
 }
