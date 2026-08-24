@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript](https://img.shields.io/badge/language-JavaScript-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Node.js CI - UCL Draw Simulator Tests](https://github.com/webkolog/js-ucl-group-generator/actions/workflows/test.yml/badge.svg)](https://github.com/webkolog/js-ucl-group-generator/actions/workflows/test.yml)
 
 **Version:** 1.0.0
 
