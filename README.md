@@ -4,11 +4,11 @@
 [![JavaScript](https://img.shields.io/badge/language-JavaScript-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Node.js CI - UCL Draw Simulator Tests](https://github.com/webkolog/js-ucl-group-generator/actions/workflows/test.yml/badge.svg)](https://github.com/webkolog/js-ucl-group-generator/actions/workflows/test.yml)
 
-**Version:** 1.0.0
+**Version:** 1.0.1
 
 **Created Date:** 2021-08-21
 
-**Last Updated:** 2021-08-21
+**Last Updated:** 2026-08-25
 
 **Created By:** Ali Candan ([@webkolog](https://github.com/webkolog))
 
