@@ -106,3 +106,8 @@ function startDraw() {
 }
 
 startDraw();
+
+// Node.js/Export for test environment
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { startDraw, teams, pots };
+}
