@@ -1,0 +1,10 @@
+{
+  "name": "js-ucl-group-generator",
+  "version": "1.0.0",
+  "description": "UEFA Champions League Group Stage Draw Simulator",
+  "main": "ucl-draw-simulator.js",
+  "scripts": {
+    "test": "node --test test/simulator.test.js"
+  },
+  "license": "MIT"
+}
